@@ -1,0 +1,20 @@
+{
+    "name": "ufoproger/num-mets",
+    "authors": [
+        {
+            "name": "Михаил Снетков",
+            "email": "ufoproger@gmail.com"
+        }
+    ],
+    "require": {
+        "fxp/composer-asset-plugin": "^1.2",
+        "bower-asset/plotly.js": "^1.17",
+        "bower-asset/bootstrap": "3.*",
+        "bower-asset/MathJax": "^2.6"
+    },
+    "extra": {
+		"asset-installer-paths": {
+			"bower-asset-library": "web/components"     
+		} 
+	}
+}
