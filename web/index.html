@@ -1,3 +1,6 @@
+<!--
+http://kpfu.ru/docs/F2109211871/Nasyrov.SR.Integral.Rimana.na.otrezke.i.ego.prilozheniya.pdf
+-->
 <!DOCTYPE html>
 <html lang="ru">
 	<head>
@@ -12,13 +15,13 @@
 		<title>Интеграл Римана</title>
 
 		<!-- Bootstrap core CSS -->
-		<link href="web/components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+		<link href="components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 
 		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 		<!-- <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet"> -->
 
 		<!-- Custom styles for this template -->
-		<link href="web/custom.css" rel="stylesheet">
+		<link href="custom.css" rel="stylesheet">
 
 		<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
 		<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -58,46 +61,62 @@
 
 			<div class="starter-template">
 				<h1>Bootstrap starter template</h1>
-				<p class="lead">При \(a \ne 0\) получается два корня уравнения \(ax^2 + bx + c = 0\),
-  для нахождения которых используют формулу
-  $${x}_{1,2} = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p>
+				<p class="lead">Пусть \(f\) — некоторая числовая функция на \([a; b]\). Пусть \(τ = {x_0, x_1, ... , x_{n−1}, x_n}\) — некоторое разбиение \([a; b]:\) и \(T_τ = (ξk)_{1≤k≤n}\) — семейство промежуточных точек, отвечающих \(τ\) . Интегральной суммой для функции \(f\), отвечающей разбиению \(τ\) и семейству промежуточных точек \(T_τ\), называется число \(S(f, τ, T_τ) = \sum_{k=1}^n f(ξk)\Delta x_k\).
+
+<!-- 
+				При \(a \ne 0\) получается два корня уравнения \(ax^2 + bx + c = 0\),
+	для нахождения которых используют формулу
+	$${x}_{1,2} = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$ --></p>
 			</div>
 
 			<div id="myDiv"></div>
 
+			<form class="form-horizontal">
+				<div class="form-group">
+					<label for="inputPlotFunction" class="col-sm-2 control-label">Функция</label>
+					<div class="col-sm-10">
+						<select class="form-control" id="inputPlotFunction">
+							<option value="1">f(x)</option>
+							<option value="2">cos(x)</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+					<div class="col-sm-10">
+						<input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<div class="checkbox">
+							<label>
+								<input type="checkbox"> Remember me
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button type="submit" class="btn btn-default">Sign in</button>
+					</div>
+				</div>
+			</form>
+
 		</div><!-- /.container -->
 
-		<script type="text/javascript" src="web/components/plotly.js/dist/plotly.js"></script>
+		<script type="text/javascript" src="components/plotly.js/dist/plotly.js"></script>
 		<!-- Bootstrap core JavaScript
 		================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
 		<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.js"><\/script>')</script>
-		<script src="web/components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="components/bootstrap/dist/js/bootstrap.min.js"></script>
 		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 		<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 		<!-- <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script> -->
-		<script type="text/javascript" src="web/components/MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-		<script>
-		var myDiv = document.getElementById('myDiv');
-		var d3 = Plotly.d3,
-			N = 400,
-			x = d3.range(N),
-			y = d3.range(N).map( d3.random.normal() ),
-			data = [ { x:x, y:y } ];
-			layout = { title:'Интеграл Римана' };
-
-		Plotly.plot(myDiv, data, layout);
-
-/*myDiv.on('plotly_relayout',
-		function(eventdata){  
-				alert( 'ZOOM!' + '\n\n' +
-						'Event data:' + '\n' + 
-						 JSON.stringify(eventdata) + '\n\n' +
-						'x-axis start:' + eventdata['xaxis.range[0]'] + '\n' +
-						'x-axis end:' + eventdata['xaxis.range[1]'] );
-		});*/
-		</script>
+		<!--<script type="text/javascript" src="components/MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+		 --><script type="text/javascript" src="page.js"></script>
 	</body>
 </html>
 
@@ -143,4 +162,4 @@ Plotly.plot(myDiv, data, layout);
 						'x-axis end:' + eventdata['xaxis.range[1]'] );
 		});*/
 		</script>
-</html> -->
+</html> 
