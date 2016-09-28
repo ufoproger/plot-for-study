@@ -60,8 +60,9 @@ http://kpfu.ru/docs/F2109211871/Nasyrov.SR.Integral.Rimana.na.otrezke.i.ego.pril
 		<div class="container">
 
 			<div class="starter-template">
-				<h1>Bootstrap starter template</h1>
-				<p class="lead">Пусть \(f\) — некоторая числовая функция на \([a; b]\). Пусть \(τ = {x_0, x_1, ... , x_{n−1}, x_n}\) — некоторое разбиение \([a; b]:\) и \(T_τ = (ξk)_{1≤k≤n}\) — семейство промежуточных точек, отвечающих \(τ\) . Интегральной суммой для функции \(f\), отвечающей разбиению \(τ\) и семейству промежуточных точек \(T_τ\), называется число \(S(f, τ, T_τ) = \sum_{k=1}^n f(ξk)\Delta x_k\).
+
+				<p class="lead">
+					Пусть \(f\) — некоторая числовая функция на \([a; b]\). Пусть \(τ = {x_0, x_1, ... , x_{n−1}, x_n}\) — некоторое разбиение \([a; b]:\) и \(T_τ = (ξk)_{1≤k≤n}\) — семейство промежуточных точек, отвечающих \(τ\) . Интегральной суммой для функции \(f\), отвечающей разбиению \(τ\) и семейству промежуточных точек \(T_τ\), называется число \(S(f, τ, T_τ) = \sum_{k=1}^n f(ξk)\Delta x_k\).
 
 <!-- 
 				При \(a \ne 0\) получается два корня уравнения \(ax^2 + bx + c = 0\),
@@ -69,39 +70,54 @@ http://kpfu.ru/docs/F2109211871/Nasyrov.SR.Integral.Rimana.na.otrezke.i.ego.pril
 	$${x}_{1,2} = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$ --></p>
 			</div>
 
-			<div id="myDiv"></div>
+			<div class="row">
 
-			<form class="form-horizontal">
-				<div class="form-group">
-					<label for="inputPlotFunction" class="col-sm-2 control-label">Функция</label>
-					<div class="col-sm-10">
-						<select class="form-control" id="inputPlotFunction">
-							<option value="1">f(x)</option>
-							<option value="2">cos(x)</option>
-						</select>
-					</div>
+				<div class="col-lg-9">
+
+					<div id="myDiv"></div>
+
 				</div>
-				<div class="form-group">
-					<label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-					<div class="col-sm-10">
-						<input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="col-sm-offset-2 col-sm-10">
-						<div class="checkbox">
-							<label>
-								<input type="checkbox"> Remember me
-							</label>
+				<div class="col-lg-3">
+
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								Настройки графика
+							</h3>
+						</div>
+						<div class="panel-body">
+
+							<form>
+								<div class="form-group">
+									<label for="plotFunction" class="control-label">Функция</label>
+									<select class="form-control" id="plotFunction">
+										<option value="0">f(x)</option>
+										<option value="1">cos(x)</option>
+									</select>
+								</div>
+
+								<div class="form-group">
+									<label for="fragmentsCount" class="control-label">Количество разбиений</label>
+									<input type="number" class="form-control" id="fragmentsCount" min="1" max="1000" step="1" value="10">
+								</div>
+
+							</form>
+
+
+							<a href="#" id="makePlot" class="btn btn-primary">Построить</a>
+						</div>
+						<div class="panel-footer">
+							<p>
+								\(S(f, τ, T_τ) = \) <span id="totalS">0</span>
+								<br/>
+								\(&int;_a^b f(x) dx = \) <span id="integralS">0</span>
+							</p>
 						</div>
 					</div>
+
 				</div>
-				<div class="form-group">
-					<div class="col-sm-offset-2 col-sm-10">
-						<button type="submit" class="btn btn-default">Sign in</button>
-					</div>
-				</div>
-			</form>
+			</div>
+
 
 		</div><!-- /.container -->
 
@@ -115,8 +131,8 @@ http://kpfu.ru/docs/F2109211871/Nasyrov.SR.Integral.Rimana.na.otrezke.i.ego.pril
 		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 		<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 		<!-- <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script> -->
-		<!--<script type="text/javascript" src="components/MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-		 --><script type="text/javascript" src="page.js"></script>
+		<script type="text/javascript" src="components/MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+		<script type="text/javascript" src="page.js"></script>
 	</body>
 </html>
 
